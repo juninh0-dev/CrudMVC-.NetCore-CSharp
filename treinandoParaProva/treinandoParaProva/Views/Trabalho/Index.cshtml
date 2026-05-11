@@ -1,0 +1,52 @@
+﻿@model List<treinandoParaProva.ViewModels.TrabalhoViewModel>
+
+@{
+    ViewData["Title"] = "Trabalhos";
+}
+
+<h1>Lista de Trabalhos</h1>
+
+<a asp-action="Create" class="btn btn-primary">
+    Novo Trabalho
+</a>
+
+<br />
+<br />
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Área Temática</th>
+            <th>Quantidade Autores</th>
+            <th>Média Notas</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Titulo</td>
+                <td>@item.AreaTematica</td>
+                <td>@item.QuantidadeAutores</td>
+                <td>@item.MediaNotas</td>
+
+                <td>
+                    <a asp-action="Avaliar"
+                       asp-route-id="@item.Id"
+                       class="btn btn-warning">
+                        Avaliar
+                    </a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.Id"
+                       class="btn btn-danger">
+                        Excluir
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

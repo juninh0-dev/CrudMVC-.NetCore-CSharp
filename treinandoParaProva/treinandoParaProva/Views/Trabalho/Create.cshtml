@@ -1,0 +1,58 @@
+﻿@model treinandoParaProva.Models.Trabalho
+
+@{
+    ViewData["Title"] = "Cadastrar Trabalho";
+}
+
+<h1>Cadastrar Trabalho</h1>
+
+<form asp-action="Create">
+
+    <div class="mb-3">
+        <label asp-for="Titulo" class="form-label"></label>
+        <input asp-for="Titulo" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Resumo" class="form-label"></label>
+        <textarea asp-for="Resumo" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="AreaTematica" class="form-label"></label>
+        <input asp-for="AreaTematica" class="form-control" />
+    </div>
+
+    <h3>Autor 1</h3>
+
+    <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <input name="Autores[0].Nome" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input name="Autores[0].Email" class="form-control" />
+    </div>
+
+    <h3>Autor 2</h3>
+
+    <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <input name="Autores[1].Nome" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input name="Autores[1].Email" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Salvar
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Voltar
+    </a>
+
+</form>

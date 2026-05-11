@@ -1,0 +1,57 @@
+﻿@model treinandoParaProva.Models.Trabalho
+
+@{
+    ViewData["Title"] = "Avaliar Trabalho";
+}
+
+<h1>Avaliar Trabalho</h1>
+
+<hr />
+
+<h3>Dados do Trabalho</h3>
+
+<div class="mb-3">
+    <strong>Título:</strong>
+    @Model.Titulo
+</div>
+
+<div class="mb-3">
+    <strong>Resumo:</strong>
+    @Model.Resumo
+</div>
+
+<hr />
+
+<form asp-action="Avaliar">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Nota</label>
+
+        <select name="Nota" class="form-control">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Comentário</label>
+
+        <textarea name="Comentario"
+                  class="form-control">
+        </textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Salvar Avaliação
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Voltar
+    </a>
+
+</form>
